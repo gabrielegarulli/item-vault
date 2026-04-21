@@ -10,6 +10,7 @@ const rarityColors: Record<Rarity, { bg: string; text: string }> = {
   rare: { bg: 'bg-blue-500', text: 'text-white' },
   'very-rare': { bg: 'bg-purple-600', text: 'text-white' },
   legendary: { bg: 'bg-yellow-500', text: 'text-gray-900' },
+  artifact: { bg: 'bg-red-500', text: 'text-white' },
 };
 
 export function RarityBadge({ rarity }: RarityBadgeProps) {

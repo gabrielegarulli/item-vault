@@ -5,13 +5,13 @@
  * - https://drive.google.com/file/d/FILE_ID/view?usp=sharing
  * - Just FILE_ID
  * 
- * Returns preview URL: https://drive.google.com/uc?export=view&id=FILE_ID
+ * Returns preview URL: https://drive.google.com/thumbnail?id=FILE_ID&sz=s4000
  */
 export function convertGoogleDriveUrl(url: string): string {
   if (!url) return '';
 
   // If it's already a preview URL, return it as-is
-  if (url.includes('drive.google.com/uc?export=view')) {
+  if (url.includes('drive.google.com/thumbnail')) {
     return url;
   }
 
@@ -21,7 +21,7 @@ export function convertGoogleDriveUrl(url: string): string {
 
   // If fileId looks like a Drive ID (alphanumeric, hyphens, underscores), convert it
   if (/^[a-zA-Z0-9-_]+$/.test(fileId)) {
-    return `https://drive.google.com/uc?export=view&id=${fileId}`;
+    return `https://drive.google.com/thumbnail?id=${fileId}&sz=s4000`;
   }
 
   // Return original URL if it doesn't match expected patterns

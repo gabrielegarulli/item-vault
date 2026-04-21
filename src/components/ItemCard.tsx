@@ -18,7 +18,7 @@ export function ItemCard({ item, onEdit, onDelete }: ItemCardProps) {
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden flex flex-col h-full">
       {/* Image Section */}
       {item.picture && (
-        <div className="w-full h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+        <div className="w-full h-80 bg-gray-200 dark:bg-gray-700 overflow-hidden">
           <img
             src={item.picture}
             alt={item.name}

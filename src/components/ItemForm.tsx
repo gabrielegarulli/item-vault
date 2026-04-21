@@ -14,6 +14,7 @@ const rarityOptions: Rarity[] = [
   'rare',
   'very-rare',
   'legendary',
+  'artifact',
 ];
 
 export function ItemForm({ item, onSubmit, onCancel }: ItemFormProps) {
