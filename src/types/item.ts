@@ -1,4 +1,6 @@
-export type Rarity = 'common' | 'uncommon' | 'rare' | 'very-rare' | 'legendary' | 'artifact';
+﻿export type Rarity = 'common' | 'uncommon' | 'rare' | 'very-rare' | 'legendary' | 'artifact';
+
+export type HuntLevel = 4 | 5 | 7 | 9 | 10 | 13 | 14 | 15 | 16 | 19;
 
 export interface Item {
   id: string;
@@ -19,4 +21,3 @@ export interface ItemFormData {
   type: string;
   components: string; // Comma-separated in form, converted to array
   description: string;
-}

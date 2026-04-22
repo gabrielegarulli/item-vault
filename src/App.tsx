@@ -1,14 +1,21 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { useItems } from './hooks/useItems';
 import type { Item, ItemFormData } from './types/item';
 import { ItemGrid } from './components/ItemGrid';
 import { ItemForm } from './components/ItemForm';
+import { AuthProvider, useAuth } from './lib/authContext';
+import PasswordGate from './components/PasswordGate';
 import './App.css';
 
-function App() {
+function AppContent() {
+  const { role } = useAuth();
   const { items, createItem, updateItem, deleteItem } = useItems();
   const [showForm, setShowForm] = useState(false);
   const [editingItem, setEditingItem] = useState<Item | undefined>(undefined);
+
+  if (!role) {
+    return <PasswordGate />;
+  }
 
   const handleCreateNew = () => {
     setEditingItem(undefined);
@@ -55,6 +62,14 @@ function App() {
         />
       )}
     </div>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
   );
 }
 
